@@ -22,7 +22,7 @@ myPoints[13] = [[1], [-1], [-1], [-1]]
 myPoints[14] = [[1], [1], [-1], [-1]]
 myPoints[15] = [[-1], [1], [-1], [-1]]
 
-distance = .5
+set_distance(2)
 
 while True:
     tempPoints = []
@@ -38,20 +38,19 @@ while True:
                        [0, 0, sin(angle), cos(angle)]]
 
         w = 1
-        w = 1 / (distance - point[3][0])
+        w = w / (distance - point[3][0])
         projectionMatrix = [[w, 0, 0, 0],
                             [0, w, 0, 0],
                             [0, 0, w, 0]]
 
         rotated = point
-        rotated = matMult(rotation_zw, rotated)
         rotated = matMult(rotation_xy, rotated)
+        rotated = matMult(rotation_zw, rotated)
         tempPoints.append(matMult(projectionMatrix, rotated))
 
     set_point(tempPoints)
-    set_distance(10)
-    set_scale(300)
+    set_scale(600)
     clock.tick(60)
+    rotateY(90)
     draw()
-    rotateX(90)
     angle += .01
