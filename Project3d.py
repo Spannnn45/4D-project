@@ -86,7 +86,7 @@ def draw():
 
         projected = matMult([[1 / (distance - rotated[2][0]), 0, 0], [0, 1 / (distance - rotated[2][0]), 0]], rotated)
         projectedPoint[i] = projected
-        pygame.draw.circle(display, blue, ((projected[0][0] * scale)+1920//2, (projected[1][0] * scale)+1080//2), 10)
+        pygame.draw.circle(display, blue, ((projectedPoint[i][0][0] * scale)+1920//2, (projectedPoint[i][1][0] * scale)+1080//2), 10)
 
     connect(projectedPoint[0], projectedPoint[1])
     connect(projectedPoint[1], projectedPoint[2])
