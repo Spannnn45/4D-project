@@ -104,16 +104,27 @@ def draw():
     connect(projectedPoint[8], projectedPoint[9])
     connect(projectedPoint[9], projectedPoint[10])
     connect(projectedPoint[10], projectedPoint[11])
-    connect(projectedPoint[11], projectedPoint[12])
+    connect(projectedPoint[11], projectedPoint[8])
 
     connect(projectedPoint[12], projectedPoint[13])
     connect(projectedPoint[13], projectedPoint[14])
     connect(projectedPoint[14], projectedPoint[15])
-    connect(projectedPoint[15], projectedPoint[8])
+    connect(projectedPoint[15], projectedPoint[12])
 
-    connect(projectedPoint[0], projectedPoint[4])
-    connect(projectedPoint[1], projectedPoint[5])
-    connect(projectedPoint[2], projectedPoint[6])
-    connect(projectedPoint[3], projectedPoint[7])
+    connect(projectedPoint[8], projectedPoint[12])
+    connect(projectedPoint[9], projectedPoint[13])
+    connect(projectedPoint[10], projectedPoint[14])
+    connect(projectedPoint[11], projectedPoint[15])
+
+
+    connect(projectedPoint[0], projectedPoint[8])
+    connect(projectedPoint[1], projectedPoint[9])
+    connect(projectedPoint[2], projectedPoint[10])
+    connect(projectedPoint[3], projectedPoint[11])
+
+    connect(projectedPoint[4], projectedPoint[12])
+    connect(projectedPoint[5], projectedPoint[13])
+    connect(projectedPoint[6], projectedPoint[14])
+    connect(projectedPoint[7], projectedPoint[15])
 
     pygame.display.update()
