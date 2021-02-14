@@ -22,7 +22,7 @@ myPoints[13] = [[1], [-1], [-1], [-1]]
 myPoints[14] = [[1], [1], [-1], [-1]]
 myPoints[15] = [[-1], [1], [-1], [-1]]
 
-set_distance(2)
+set_distance(3)
 
 while True:
     tempPoints = []
