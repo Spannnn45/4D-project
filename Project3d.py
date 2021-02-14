@@ -85,4 +85,8 @@ def draw():
         pygame.draw.circle(display, blue, ((projected[0][0] * scale)+1920//2, (projected[1][0] * scale)+1080//2), 10)
 
     connect(projectedPoint[0], projectedPoint[1])
+    connect(projectedPoint[1], projectedPoint[2])
+    connect(projectedPoint[2], projectedPoint[3])
+    connect(projectedPoint[3], projectedPoint[0])
+
     pygame.display.update()
