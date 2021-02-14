@@ -1,5 +1,6 @@
 from matrix import *
 import pygame
+from pprint import pprint
 import math
 
 pygame.init()
@@ -9,7 +10,7 @@ clock = pygame.time.Clock()
 
 faces = []
 
-projectedPoint = [i for i in range(0, 16)]
+projectedPoint = []
 
 rotation_x = [[1, 0, 0],
               [0, math.cos(0), -math.sin(0)],
@@ -79,14 +80,19 @@ display.fill(white)
 def draw():
     clock.tick(60)
     display.fill(white)
+    projectedPoint = []
     for i in range(0, len(points)):
         rotated = matMult(rotation_x, points[i])
         rotated = matMult(rotation_y, rotated)
         rotated = matMult(rotation_z, rotated)
 
         projected = matMult([[1 / (distance - rotated[2][0]), 0, 0], [0, 1 / (distance - rotated[2][0]), 0]], rotated)
-        projectedPoint[i] = projected
+        projectedPoint.append(projected)
         pygame.draw.circle(display, blue, ((projectedPoint[i][0][0] * scale)+1920//2, (projectedPoint[i][1][0] * scale)+1080//2), 10)
+
+    pprint(projectedPoint)
+    if len(projectedPoint) < 16:
+        return
 
     connect(projectedPoint[0], projectedPoint[1])
     connect(projectedPoint[1], projectedPoint[2])

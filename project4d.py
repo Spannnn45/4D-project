@@ -52,6 +52,7 @@ def set_angleZW(angle):
 
 
 def use_Demo_tesseract():
+    global myPoints
     myPoints = [i for i in range(0, 16)]
 
     myPoints[0] = [[-1], [-1], [1], [1]]
@@ -102,4 +103,5 @@ def draw():
 
     Project3d.set_point(tempPoints)
     set_scale(scale)
+    rotateY(90)
     Project3d.draw()
