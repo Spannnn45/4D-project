@@ -52,5 +52,6 @@ while True:
     set_point(tempPoints)
     set_scale(600)
     clock.tick(60)
+    rotateY(90)
     draw()
     angle += .01
