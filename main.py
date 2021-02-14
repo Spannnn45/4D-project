@@ -37,7 +37,6 @@ while True:
                        [0, 0, cos(angle), -sin(angle)],
                        [0, 0, sin(angle), cos(angle)]]
 
-
         rotated = point
         rotated = matMult(rotation_xy, rotated)
         rotated = matMult(rotation_zw, rotated)
