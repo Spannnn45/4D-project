@@ -56,16 +56,20 @@ def set_distance(d):
     global distance
     distance = d
 
+
 def set_scale(scales):
     global scale
     scale = scales
+
 
 def set_faces(face):
     global faces
     faces = face
 
+
 def connect(a, b):
     pygame.draw.line(display, black, (a[0][0] * scale + 1920 // 2, a[1][0] * scale + 1080 // 2), (b[0][0] * scale + 1920 // 2, b[1][0] * scale + 1080 // 2), 5)
+
 
 pygame.display.set_caption("Well hello there")
 display = pygame.display.set_mode((1920, 1080))

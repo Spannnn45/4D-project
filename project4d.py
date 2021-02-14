@@ -6,10 +6,17 @@ system("pip install pygame")
 
 myPoints = []
 
+distance = 3
+
 angleZW = 0
 angleXY = 0
 
 scale = 600
+
+
+def set_distance(dist):
+    global distance
+    distance = dist
 
 
 def rotateX(angle):
@@ -65,11 +72,11 @@ def use_Demo_tesseract():
     myPoints[15] = [[-1], [1], [-1], [-1]]
 
 
-Project3d.set_distance(3)
 
 
 def draw():
     tempPoints = []
+    Project3d.set_distance(distance)
     for point in myPoints:
         rotation_xy = [[cos(angleXY), -sin(angleXY), 0, 0],
                        [sin(angleXY), cos(angleXY), 0, 0],
