@@ -11,9 +11,23 @@ angleXY = 0
 
 scale = 600
 
+
+def rotateX(angle):
+    Project3d.rotateX(angle)
+
+
+def rotateZ(angle):
+    Project3d.rotateZ(angle)
+
+
+def rotateY(angle):
+    Project3d.rotateY(angle)
+
+
 def set_scale(scales):
     global scale
     scale = scales
+
 
 def set_points(points):
     global myPoints
@@ -79,8 +93,6 @@ def draw():
 
         tempPoints.append(matMult(projectionMatrix, rotated))
 
-    set_point(tempPoints)
+    Project3d.set_point(tempPoints)
     set_scale(scale)
-    clock.tick(60)
-    rotateY(90)
-    draw()
+    Project3d.draw()
