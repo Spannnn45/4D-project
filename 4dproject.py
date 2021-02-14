@@ -1,6 +1,8 @@
 import Project3d
 from matrix import *
 from math import cos, sin
+from os import system
+system("pip install pygame")
 
 myPoints = []
 
