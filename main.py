@@ -37,20 +37,21 @@ while True:
                        [0, 0, cos(angle), -sin(angle)],
                        [0, 0, sin(angle), cos(angle)]]
 
-        w = 1
-        w = w / (distance - point[3][0])
-        projectionMatrix = [[w, 0, 0, 0],
-                            [0, w, 0, 0],
-                            [0, 0, w, 0]]
 
         rotated = point
         rotated = matMult(rotation_xy, rotated)
         rotated = matMult(rotation_zw, rotated)
+
+        w = 1
+        w = w / (distance - rotated[3][0])
+        projectionMatrix = [[w, 0, 0, 0],
+                            [0, w, 0, 0],
+                            [0, 0, w, 0]]
+
         tempPoints.append(matMult(projectionMatrix, rotated))
 
     set_point(tempPoints)
     set_scale(600)
     clock.tick(60)
-    rotateY(90)
     draw()
     angle += .01
