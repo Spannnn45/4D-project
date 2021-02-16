@@ -1,6 +1,5 @@
 from matrix import *
 import pygame
-from pprint import pprint
 import math
 
 pygame.init()
@@ -90,7 +89,6 @@ def draw():
         projectedPoint.append(projected)
         pygame.draw.circle(display, blue, ((projectedPoint[i][0][0] * scale)+1920//2, (projectedPoint[i][1][0] * scale)+1080//2), 10)
 
-    pprint(projectedPoint)
     if len(projectedPoint) < 16:
         return
 
